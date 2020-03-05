@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>我的</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+	<script>
+		(function(){
+			var docEl=document.documentElement;
+			function remvalue(){
+				var rem=docEl.clientWidth/10;
+
+				docEl.style.fontSize=rem+'px';
+			}
+
+			remvalue();
+
+			window.addEventListener('resize',remvalue);
+			window.addEventListener('pageshow',function(e){
+				if(e.persisted){
+					remvalue();
+				}
+			});
+		})()
+	</script>
+	<link rel="stylesheet" href="../lib/reset.css">
+	<link rel="stylesheet" href="../common/bottomBar/bottomBar.css">
+	<link rel="stylesheet" href="my.css">
+</head>
+<body>
+
+	<div class="my">
+		<div class="header">
+			<img src="http://i.waimai.meituan.com/static/img/default-avatar.png" alt="头像" class="avatar">
+			<p class="nickname">粥小贤</p>
+		</div>
+		<div class="content">
+			<ul class="items">
+				<li class="address">收货地址管理</li>
+				<li class="money">商家代金卷</li>
+			</ul>
+			<ul class="items">
+				<li class="email">收货地址管理</li>
+				<li class="question">常见问题</li>
+			</ul>
+			<p class="tel">客服电话：&nbsp;101-097-77</p>
+			<p class="time">服务时间：&nbsp;9：00-23：00</p>
+		</div>
+	</div>
+
+	<div class="bottom-bar"></div>
+
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="../common/bottomBar/bottomBar.js"></script>
+
+</body>
+</html>

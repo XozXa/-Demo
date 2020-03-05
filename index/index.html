@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>美团外卖</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+	<script>
+		(function(){
+			var docEl=document.documentElement;
+			function remvalue(){
+				var rem=docEl.clientWidth/10;
+
+				docEl.style.fontSize=rem+'px';
+			}
+
+			remvalue();
+
+			window.addEventListener('resize',remvalue);
+			window.addEventListener('pageshow',function(e){
+				if(e.persisted){
+					remvalue();
+				}
+			});
+		})()
+	</script>
+	<link rel="stylesheet" href="../lib/reset.css">
+	<link rel="stylesheet" href="css/header.css">
+	<link rel="stylesheet" href="css/search.css">
+	<link rel="stylesheet" href="css/category.css">
+	<link rel="stylesheet" href="css/listshoping.css">
+	<link rel="stylesheet" href="css/starScore.css">
+	<link rel="stylesheet" href="../common/bottomBar/bottomBar.css">
+</head>
+<body>
+	<div class="header">
+		<div class="search-bar">
+			<div class="bar-location">
+				<div class="location-icon"></div>
+				<div class="location-text">攀枝花市</div>
+			</div>
+			<div class="search-btn">
+				<div class="search-infor">肯德基</div>
+			</div>
+		</div>
+		<a href="javascript:void(0)" class="header-backimg"></a>
+	</div>
+
+
+	<div class="category-content"></div>
+
+
+	<div class="list-content">
+		<h4 class="list-title">
+			<span class="title-line"></span>
+			<span>附近商家</span>
+			<span class="title-line"></span>
+		</h4>
+		<div class="list-wrap"></div>
+		<div class="loading">加载中</div>
+	</div>
+
+	<div class="bottom-bar"></div>
+
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="js/category.js"></script>
+<script src="js/starScore.js"></script>
+<script src="../common/bottomBar/bottomBar.js"></script>
+<script src="js/location.js"></script>
+<script src="js/listshoping.js"></script>
+
+
+</body>
+</html>
